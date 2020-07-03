@@ -1,0 +1,41 @@
+<%if @user.errors.any?%>
+  <%@user.errors.full_messages.each do |msg|%>
+      <li><%= msgjumakhan%></li>
+    <%end%>
+<% end %>
+<h1 class="ui center aligned header"> Welcome to MessageMe ChatApp </h1>
+<h4 class="ui center aligned medium icon header">
+  <i class="circular orange user outline icon"></i>
+   Please login or sign up to continue   
+</h4>
+<div class ="ui container center aligned grid">
+<div class= "ui inverted segment custom-form">
+<div class="ui inverted form">
+<%= form_for @user do |f| %>
+  <div class="field">
+  <%= f.label :username, "Username"%>
+    <div class="ui left icon input">
+    <%= f.text_field :username, placeholder: "Username" %>
+      <i class="user icon"></i>
+    </div>
+  </div>
+  <div class="field">
+    <%= f.label :password, "Password" %>
+    <div class="ui left icon input">
+      <%= f.password_field :password, placeholder: "Password" %>
+      <i class="lock icon"></i>
+    </div>
+  </div>
+
+  <div class="field">
+  <%= f.label :password, "Confirm Password" %>
+  <div class="ui left icon input">
+    <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+    <i class="lock icon"></i>
+  </div>
+</div>
+  <%= f.button "Sign up", class: "ui orange submit button" %>
+</div>
+<%end%>
+</div>
+</div>
