@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
   post 'message', to: 'messages#create'
   get 'signup', to: 'users#new'
+  
 end
